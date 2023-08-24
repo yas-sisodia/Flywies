@@ -61,6 +61,7 @@ TextEditingController confirmPassword = TextEditingController();
     RegisterEndPoint _register = RegisterEndPoint(client: _client.init());
     _register.RegisterApi(email.text, password.text, confirmPassword.text);
   }
+  
    
   
 }

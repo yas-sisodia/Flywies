@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
-
 class Client{
   Dio init(){
     Dio _dio = Dio();
     _dio.interceptors.add(ApiInterceptor());
-    _dio.options.baseUrl = 'https://r-education.herokuapp.com/';
+    _dio.options.baseUrl = 'http://13.233.114.64:8000/';
+    // _dio.options.baseUrl = 'https://r-education.herokuapp.com/';
     return _dio;
   }
 }

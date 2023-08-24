@@ -8,16 +8,9 @@ import 'package:raghu_education/view/home/home_page/home_screen.dart';
 import 'package:raghu_education/view/signUp/profile/profile_screen.dart';
 
 class LoginController extends GetxController {
-
-
-
   GlobalKey<FormState> signinkey = GlobalKey();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-
-  
-
-
   String ? emailvalidation(value){
     if(value == ''){
       return 'enter your Mobile/Email';
