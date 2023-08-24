@@ -15,77 +15,88 @@ class BottomNavBarscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: 
-      // Obx(
-      //   () => SafeArea(
-      //     child: Stack(
-      //       children: [
-      //         Center(
-      //           child: IndexedStack(
-      //             index: _bottomController.tabindex.value,
-      //             children: [HomeScreen(), MyCourseScreen(), SavedScreen()],
-      //           ),
-      //         ),
-      //         Align(
-      //           alignment: Alignment.bottomCenter,
-      //           child: BottomNavigationBar(
-      //               elevation: 4,
-      //               onTap: _bottomController.changeTabIndex,
-      //               items: [
-      //                 BottomNavigationBarItem(
-      //                     title: Text("Home",
-      //                     style: TextStyle(
-      //                        color: _bottomController.tabindex.value==0?Colors.blue:Colors.grey,
-      //                     )
-      //                     ),
-      //                     icon: InkWell(
-      //                       onTap: () {
-      //                         _bottomController.changeTabIndex(0);
-      //                       },
-      //                       child: ImageIcon(
-      //                         AssetImage(
-      //                           "assets/images/home (2).png",
-      //                         ),
-      //                          color: _bottomController.tabindex.value==0?Colors.blue:Colors.grey,
-      //                         size: 2.h,
-      //                       ),
-      //                     )),
-      //                 BottomNavigationBarItem(
-      //                     title: Text("My Courses",
-      //                     style: TextStyle(
-      //                        color: _bottomController.tabindex.value==1?Colors.blue:Colors.grey,
-      //                     ),
-      //                     ),
-      //                     icon: InkWell(
-      //                       onTap: () {
-      //                         _bottomController.changeTabIndex(1);
-      //                       },
-      //                       child: ImageIcon(
-      //                         AssetImage(
-      //                           "assets/images/myCourses.png",
-      //                         ),
-      //                         color: _bottomController.tabindex.value==1?Colors.blue:Colors.grey,
-      //                         size: 2.h,
-      //                       ),
-      //                     )),
-      //                 BottomNavigationBarItem(
-      //                     icon: Icon(Icons.bookmark,
-      //                      color: _bottomController.tabindex.value==2?Colors.blue:Colors.grey,
-      //                     ), title: Text("Save",
-      //                     style: TextStyle(
-      //                        color: _bottomController.tabindex.value==2?Colors.blue:Colors.grey,
-      //                     ),
-      //                     ))
-      //               ]),
-      //         )
-      //       ],
-      //     ),
-      //   ),
-      // ),
+      body: Obx(
+        () => SafeArea(
+          child: Stack(
+            children: [
+              Center(
+                child: IndexedStack(
+                  index: _bottomController.tabindex.value,
+                  children: [HomeScreen(), MyCourseScreen(), SavedScreen()],
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: BottomNavigationBar(
+                    elevation: 4,
+                    onTap: _bottomController.changeTabIndex,
+                    items: [
+                      BottomNavigationBarItem(
+                          // title: Text("Home",
+                          // style: TextStyle(
+                          //    color: _bottomController.tabindex.value==0?Colors.blue:Colors.grey,
+                          // )
+                          // ),
+                          label: "Home",
+                          icon: InkWell(
+                            onTap: () {
+                              _bottomController.changeTabIndex(0);
+                            },
+                            child: ImageIcon(
+                              AssetImage(
+                                "assets/images/home (2).png",
+                              ),
+                              color: _bottomController.tabindex.value == 0
+                                  ? Colors.blue
+                                  : Colors.grey,
+                              size: 2.h,
+                            ),
+                          )),
+                      BottomNavigationBarItem(
+                          // title: Text("My Courses",
+                          // style: TextStyle(
+                          //    color: _bottomController.tabindex.value==1?Colors.blue:Colors.grey,
+                          // ),
+                          // ),
+                          label: "My Courses",
+                          icon: InkWell(
+                            onTap: () {
+                              _bottomController.changeTabIndex(1);
+                            },
+                            child: ImageIcon(
+                              AssetImage(
+                                "assets/images/myCourses.png",
+                              ),
+                              color: _bottomController.tabindex.value == 1
+                                  ? Colors.blue
+                                  : Colors.grey,
+                              size: 2.h,
+                            ),
+                          )),
+                      BottomNavigationBarItem(
+                          icon: Icon(
+                            Icons.bookmark,
+                            color: _bottomController.tabindex.value == 2
+                                ? Colors.blue
+                                : Colors.grey,
+                          ),
+                          label: "Save"
+                          // title: Text("Save",
+                          // style: TextStyle(
+                          //    color: _bottomController.tabindex.value==2?Colors.blue:Colors.grey,
+                          // ),
+                          // )
+                          )
+                    ]),
+              )
+            ],
+          ),
+        ),
+      ),
       // ==============================
-      Center(
-        child: Text("data"),
-      )
+      // Center(
+      //   child: Text("data"),
+      // )
       // =================================
     );
   }

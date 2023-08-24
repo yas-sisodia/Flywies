@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:raghu_education/global_variables.dart';
 import 'package:raghu_education/view/home/bottom%20bar/bottom_bar_screen.dart';
 import 'package:raghu_education/widgets/commonLoader.dart';
 import 'package:get/get.dart' as g;
@@ -44,7 +45,8 @@ class SignInProvider {
       var data = {"email": email, "password": pass, "otp": "738972"};
       CommanLoader.loader();
       // Response r = await client.post('user/login', data: data);
-      Response r = await client.request('http://13.233.114.64:8000/login',
+      // Response r = await client.request('http://13.233.114.64:8000/login',
+      Response r = await client.request("${GlobalVariables.baseUrl}/login",
           options: Options(
             method: 'POST',
             headers: headers,
