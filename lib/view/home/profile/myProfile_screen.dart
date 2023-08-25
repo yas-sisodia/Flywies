@@ -1,12 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:get_storage/get_storage.dart';
 import 'package:raghu_education/import_files.dart';
 import 'package:raghu_education/widgets/app_bar.dart';
 import 'package:raghu_education/widgets/constant.dart';
 
 class MyProfilescreen extends StatelessWidget {
-  const MyProfilescreen({Key? key}) : super(key: key);
-
+  MyProfilescreen({Key? key}) : super(key: key);
+  final user = GetStorage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,7 +137,7 @@ class MyProfilescreen extends StatelessWidget {
                               color: Colors.grey,
                             ),
                             Text(
-                              "_ edit",
+                              user.read('userId'),
                               style: TextStyle(
                                   color: Colors.grey, fontSize: 12.sp),
                             )
@@ -374,9 +375,9 @@ class MyProfilescreen extends StatelessWidget {
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 12.sp),
                                           ),
-                                        SizedBox(
-                                          width: 14.w,
-                                        ),
+                                          SizedBox(
+                                            width: 14.w,
+                                          ),
                                           Text(
                                             "50% Completed",
                                             style: TextStyle(
@@ -530,12 +531,13 @@ class MyProfilescreen extends StatelessWidget {
                 top: 0,
                 child: App_Bar(
                     icon: InkWell(
-                      onTap: (){
+                      onTap: () {
                         Get.back();
                       },
-                      child: Icon(Icons.arrow_back_ios,
-                      color: secondryColor,
-                      size: 3.h,
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: secondryColor,
+                        size: 3.h,
                       ),
                     ),
                     title: 'Profile',

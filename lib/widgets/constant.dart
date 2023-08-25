@@ -6,3 +6,5 @@ const texxtcolor = Color(0xFF000000);
 const bgOnbard = Color(0xFFBCBCBC);
 
 String token = '';
+String id = '';
+String userName = '';

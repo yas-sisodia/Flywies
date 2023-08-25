@@ -56,8 +56,14 @@ class SignInProvider {
       // print(r.data);
       CommanLoader.hideLoader();
       if (r.statusMessage == 'OK') {
+        print(r.data);
         prefs.write('token', r.data['data']['token']);
         token = prefs.read('token');
+        prefs.write('userId', r.data['data']['user']['_id']);
+        id = prefs.read('userId');
+        prefs.write('userName', r.data['data']['user']['_id']);
+        userName = prefs.read('userName');
+
         print(token);
         CommanLoader.hideLoader();
         g.Get.offAll(() => BottomNavBarscreen());
